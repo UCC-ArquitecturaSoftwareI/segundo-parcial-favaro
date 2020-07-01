@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+/* Buen color bordo color: #6a2b21;*/
+
+* {
+    font-family: 'Merriweather', serif;
+    box-sizing: border-box;
+}
+
+/**
+    Layout
+ */
+h1,
+.navbar-brand {
+    font-family: 'Lobster', cursive;
+}
+
+/**
+    Homepage.ejs
+ */
+.homeCards {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card img {
+    height: 128px;
+    width: 128px;
+}
+
+/**
+    Login.ejs
+ */
+#formLogin {
+    height: 90vh;
+}
+
+.form-group label {
+    font-size: 24px;
+}
