@@ -9,5 +9,5 @@
 
 ### Descripción
 
-Aplicación que facilita la gestión y carga de alquileres como de clientes.
+Aplicación que facilita la gestión y carga tanto de alquileres como de clientes.
 
