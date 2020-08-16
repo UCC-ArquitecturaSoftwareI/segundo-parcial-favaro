@@ -7,8 +7,8 @@
 
 module.exports = {
 
-
-  login: async function (req, res) { //Debe ser asyncrona para realizar los awaits. (trabajar en 2do plano)
+  //Controlador de LOGIN
+  login: async function (req, res) { //Debe ser asincrona para realizar los awaits. (trabajar en 2do plano)
     let user = req.param('user'); // Lo que mandan al escribir en los campos user y password
     let password = req.param('password');
 
@@ -24,6 +24,11 @@ module.exports = {
       req.session.user = null; // Se loggea mal, se pone nula.
       res.view('pages/login');
     }
-  }
+  },
 
+  //Controlador de LOGOUT
+  logout: async function (req, res) {
+    req.session.user = null;
+    res.redirect('/');
+  }
 };

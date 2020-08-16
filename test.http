@@ -2,4 +2,12 @@
 POST http://localhost:1337/user
 Content-Type: application/x-www-form-urlencoded
 
-username=daniel&password=daf332&email=danielanibalfavaro@hotmail.com
+username=daniel&password=daf332
+
+###
+
+POST http://localhost:1337/alojamiento
+Content-Type: application/x-www-form-urlencoded
+
+capacidad=4&garage=true&direccion=Esquina Perito Moreno y Calafate&administrator=1
+
