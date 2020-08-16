@@ -31,9 +31,8 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     alojamientos: {
       collection: 'alojamiento',
-      via: 'administrator'
+      via: 'owner',
     }
-
   },
 
 };

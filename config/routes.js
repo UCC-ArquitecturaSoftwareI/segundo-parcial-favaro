@@ -18,15 +18,20 @@ module.exports.routes = {
      *                                                                          *
      ***************************************************************************/
 
-  '/': {
-    view: 'pages/homepage',
-  },
+  '/': 'AlojamientoController.home',
   //Usuarios
   'GET /login': {
     view: 'pages/login',
   },
   'POST /login': 'UserController.login',
-  '/logout': 'UserController.logout'
+  '/logout': 'UserController.logout',
+
+  //Alojamientos
+  'GET /newAlojamiento': {
+    view: 'pages/newAlojamiento',
+  },
+  'POST /newAlojamiento': 'AlojamientoController.newAlojamiento',
+
 
   /***************************************************************************
      *                                                                          *
