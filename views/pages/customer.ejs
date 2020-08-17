@@ -1,0 +1,17 @@
+<div class="container text-center vh-100">
+
+    <h1 class="display-4 pt-1 mt-2">Clientes</h1>
+
+    <div id="homepage" class="row mt-3 border-top border-dark">
+
+        <% for (let customer of customers) { %>
+            <p>
+                <%-customer.name%> <%-customer.lastName%> <br>
+                <%-customer.licensePlate%>
+            </p>
+
+        <% } %>
+
+    </div>
+
+</div>

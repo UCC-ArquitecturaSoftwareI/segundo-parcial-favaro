@@ -46,20 +46,22 @@
             <li class="nav-item active mx-3">
                 <a class="nav-link" href="/">Inicio</a>
             </li>
-            <li class="nav-item active mx-3">
-                <a class="nav-link" href="#">Clientes</a>
-            </li>
-            <li class="nav-item dropdown ml-0 active mx-3">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Estadías
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Casa</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Duplex</a>
-                </div>
-            </li>
+            <% if( req.session.user ) { %>
+                <li class="nav-item active mx-3">
+                    <a class="nav-link" href="#">Estadías</a>
+                </li>
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown"
+                       data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false" role="button">Clientes</a>
+                    <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/customer">Ver clientes</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/newCustomer">Agregar cliente</a>
+                    </div>
+                </li>
+            <% } %>
+
         </ul>
 
         <ul class="navbar-nav mr-2 ml-3">
@@ -70,10 +72,11 @@
             <% } else { %>
                 <li class="nav-item active dropdown">
                     <a class="nav-link dropdown-toggle text-capitalize pt-2" id="navbarDropdown"
-                        data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false" role="button"> <%- req.session.user.username %> </a>
+                       data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false" role="button"> <%- req.session.user.username %> </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/newAlojamiento">Nuevo Alojamiento</a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/logout">Logout</a>
                     </div>
                 </li>

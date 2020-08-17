@@ -32,6 +32,12 @@ module.exports.routes = {
   },
   'POST /newAlojamiento': 'AlojamientoController.newAlojamiento',
 
+  //Customers
+  'GET /newCustomer': {
+    view: 'pages/newCustomer',
+  },
+  'POST /newCustomer': 'CustomerController.newCustomer',
+  '/customer': 'CustomerController.customers'
 
   /***************************************************************************
      *                                                                          *
