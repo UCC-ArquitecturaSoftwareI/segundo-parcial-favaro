@@ -1,17 +1,24 @@
-<div class="container text-center vh-100">
-
-    <h1 class="display-4 pt-1 mt-2">Clientes</h1>
-
-    <div id="homepage" class="row mt-3 border-top border-dark">
-
-        <% for (let customer of customers) { %>
-            <p>
-                <%-customer.name%> <%-customer.lastName%> <br>
-                <%-customer.licensePlate%>
-            </p>
-
-        <% } %>
-
-    </div>
-
-</div>
+<table class="table table-striped table-dark">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Miembros</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Patente</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for (let customer of customers) { %>
+    <tr>
+        <th scope="row"> <%- customer.id%> </th>
+        <td> <%- customer.name%> </td>
+        <td> <%- customer.lastName%> </td>
+        <td> <%- customer.members%> </td>
+        <td> <%- customer.city%> </td>
+        <td> <%- customer.licensePlate%> </td>
+    </tr>
+    <% } %>
+    </tbody>
+</table>

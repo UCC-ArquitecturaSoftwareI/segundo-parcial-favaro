@@ -17,7 +17,6 @@ module.exports.routes = {
      * `assets` directory)                                                      *
      *                                                                          *
      ***************************************************************************/
-
   '/': 'AlojamientoController.home',
   //Usuarios
   'GET /login': {

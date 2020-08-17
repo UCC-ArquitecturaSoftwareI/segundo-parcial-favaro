@@ -2,11 +2,11 @@
 
     <h1 class="display-4 pt-1 mt-2">Alquileres del Valle</h1>
 
-        <div id="homepage" class="row mt-3 border-top border-dark">
-
+    <div id="homepage" class="row mt-3 border-top border-dark">
+        <% if (req.session.user){ %>
             <% for (let alojamiento of alojamientos) { %>
 
-                <div class="col-lg-6 col-md-12">
+                <div class="col-lg-6 col-md-12 mb-3">
                     <h2 class="pt-2 display-4 mt-2"><%- alojamiento.nombre %> </h2>
                     <div class="card homeCards border py-3 rounded-pill mb-2">
                         <img class="card-img-top align-self-center" alt="Casa" src=<%- alojamiento.imagenUrl %>>
@@ -18,7 +18,13 @@
                 </div>
 
             <% } %>
+    </div>
+    <% } else { %>
+        <div class="mt-5 h-50 w-100">
+            <h2 class="mb-5">Inicia sesión para ver el contenido</h2>
 
+            <a href="/login" type="submit" class="btn btn-dark btn-lg mt-2">Iniciar Sesión</a>
         </div>
+    <% } %>
 
 </div>
