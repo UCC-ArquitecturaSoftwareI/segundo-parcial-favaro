@@ -17,6 +17,16 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
 
+  '*': true,
+  AlojamientoController: {
+    'home': true,
+    '*': 'isLoggedIn',
+  },
+  CustomerController: {
+    '*': 'isLoggedIn',
+  },
+  EstadiaController:{
+    '*': 'isLoggedIn',
+  },
 };

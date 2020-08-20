@@ -7,18 +7,20 @@
         <th scope="col">Miembros</th>
         <th scope="col">Ciudad</th>
         <th scope="col">Patente</th>
+        <th scope="col">Eliminar</th>
     </tr>
     </thead>
     <tbody>
     <% for (let customer of customers) { %>
-    <tr>
-        <th scope="row"> <%- customer.id%> </th>
-        <td> <%- customer.name%> </td>
-        <td> <%- customer.lastName%> </td>
-        <td> <%- customer.members%> </td>
-        <td> <%- customer.city%> </td>
-        <td> <%- customer.licensePlate%> </td>
-    </tr>
+        <tr>
+            <th scope="row"> <%- customer.id %> </th>
+            <td> <%- customer.name %> </td>
+            <td> <%- customer.lastName %> </td>
+            <td> <%- customer.members %> </td>
+            <td> <%- customer.city %> </td>
+            <td> <%- customer.licensePlate %> </td>
+            <td><a class="fas fa-times-circle text-danger" role="button"><%- customer.id %></a></td>
+        </tr>
     <% } %>
     </tbody>
 </table>

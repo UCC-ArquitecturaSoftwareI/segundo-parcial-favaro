@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  customers: async function(req,res){
+  customers: async function (req, res) {
     let customers = await Customer.find({});
     res.view('pages/customer', {customers: customers});
   },
@@ -28,7 +28,11 @@ module.exports = {
     });
 
     res.redirect('/customer');
-  }
+  },
+
+  newCustomerInvisible: function (req, res) {
+    res.view('pages/newCustomer');
+  },
 
 };
 

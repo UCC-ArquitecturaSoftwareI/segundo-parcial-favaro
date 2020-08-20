@@ -46,22 +46,16 @@
             <li class="nav-item active mx-3">
                 <a class="nav-link" href="/">Inicio</a>
             </li>
-            <% if( req.session.user ) { %>
-                <li class="nav-item active mx-3">
-                    <a class="nav-link" href="#">Estadías</a>
-                </li>
-                <li class="nav-item active dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown"
-                       data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false" role="button">Clientes</a>
-                    <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/customer">Ver clientes</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/newCustomer">Agregar cliente</a>
-                    </div>
-                </li>
-            <% } %>
-
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown"
+                   data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false" role="button">Clientes</a>
+                <div class="dropdown-menu dropdown" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/customer">Ver clientes</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/newCustomer">Agregar cliente</a>
+                </div>
+            </li>
         </ul>
 
         <ul class="navbar-nav mr-2 ml-3">

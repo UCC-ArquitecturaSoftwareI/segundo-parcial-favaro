@@ -1,5 +1,5 @@
 /**
- * Alojamiento.js
+ * Estadia.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,30 +8,37 @@
 module.exports = {
 
   attributes: {
-
-    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    name: {
+    initialDate: {
       type: 'string',
+      columnType: 'date',
       required: true,
     },
-    capacity: {
+    finalDate: {
+      type: 'string',
+      columnType: 'date',
+      required: true,
+    },
+    paymentMethod: {
+      type: 'string',
+      required: false,
+    },
+    valuePerDay: {
       type: 'number',
       required: true,
     },
-    garage: {
-      type: 'boolean',
-      required: true,
+    totalValue: {
+      type: 'number',
+      required: false,
     },
-    address: {
-      type: 'string',
-      required: true,
+    downPayment: {
+      type: 'number',
+      required: false,
     },
-    image: {
-      type: 'string',
-      required: true,
-    },
+    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
+    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
+    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+
+
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
@@ -40,15 +47,12 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-    owner: {
-      model: 'user',
+    rent: {
+      model: 'alojamiento'
     },
-    estadias: {
-      collection: 'estadia',
-      via: 'rent'
+    guest: {
+      model: 'customer',
     }
-
   },
-
 };
 

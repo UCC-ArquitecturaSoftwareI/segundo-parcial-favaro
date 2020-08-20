@@ -1,5 +1,5 @@
 <form id="formLogin" method="POST" action="/newAlojamiento"
-      class="d-flex flex-column text-center justify-content-center align-items-center mt-4 mb-5">
+      class="d-flex flex-column text-center justify-content-center align-items-center pt-5 pb-5">
 
     <div class="form-group w-25">
         <label for="nombre"><b>Nombre</b></label>
@@ -13,11 +13,13 @@
 
     <div class="form-group w-25">
         <label for="garage"><b>Garage (true or false)</b></label>
-        <input type="text" class="form-control" id="garage" name="garage">
+        <br>
+        <input type="radio" name="garage" value="true" class="mt-2"> SI
+        <input type="radio" name="garage" value="false" class="ml-5"> NO
     </div>
 
     <div class="form-group w-25">
-        <label for="imagen"><b>Imagen (colocar images/nombre.png)</b></label>
+        <label for="imagen"><b>Imagen (128px)</b></label>
         <input type="text" class="form-control" id="imagen" name="imagen">
     </div>
 
@@ -26,6 +28,6 @@
         <input type="text" class="form-control" id="direccion" name="direccion">
     </div>
 
-    <button type="submit" class="btn btn-primary btn-lg">Crear</button>
+    <button type="submit" class="btn btn-primary btnAlojamiento">Crear</button>
 
 </form>

@@ -1,0 +1,31 @@
+<form id="formLogin" method="POST" action="/newRental/<%- req.params.id %>"
+      class="d-flex flex-column text-center justify-content-center align-items-center pt-5 pb-5">
+
+    <div class="form-group w-25">
+        <label for="guestID"><b>ID Cliente</b></label>
+        <input type="number" class="form-control" id="guestID" name="guestID">
+    </div>
+
+    <div class="form-group w-25">
+        <label for="initialDate"><b>Fecha de inicio</b></label>
+        <input type="date" class="form-control" id="initialDate" name="initialDate">
+    </div>
+
+    <div class="form-group w-25">
+        <label for="finalDate"><b>Fecha de fin</b></label>
+        <input type="date" class="form-control" id="finalDate" name="finalDate">
+    </div>
+
+    <div class="form-group w-25">
+        <label for="paymentMethod"><b>Forma de pago</b></label>
+        <input type="text" class="form-control" id="paymentMethod" name="paymentMethod">
+    </div>
+
+    <div class="form-group w-25">
+        <label for="valuePerDay"><b>Valor por día</b></label>
+        <input type="number" class="form-control" id="valuePerDay" name="valuePerDay">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg" >Crear</button>
+
+</form>

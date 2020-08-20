@@ -1,0 +1,26 @@
+<table class="table table-striped table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Huésped</th>
+        <th scope="col">Fecha Inicial</th>
+        <th scope="col">Fecha Final</th>
+        <th scope="col">Forma de Pago</th>
+        <th scope="col">Valor por Día</th>
+        <th scope="col">Seña 20%</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for (let estadia of estadias) { %>
+        <% if( estadia.rent == req.params.id ) { %>
+            <tr>
+                <th scope="row"> <%- estadia.guest %> </th>
+                <td> <%- estadia.initialDate %> </td>
+                <td> <%- estadia.finalDate %> </td>
+                <td> <%- estadia.paymentMethod %> </td>
+                <td> <%- estadia.valuePerDay %> </td>
+                <td> <%- estadia.downPayment %> </td>
+            </tr>
+        <% } %>
+    <% } %>
+    </tbody>
+</table>

@@ -6,29 +6,32 @@
  */
 
 module.exports = {
-  home: async function (req,res){
+  home: async function (req, res) {
     let alojamientos = await Alojamiento.find({}).populate('owner');
     res.view('pages/homepage', {alojamientos: alojamientos});
   },
 
-  newAlojamiento: async function (req,res){
-    let nombre = req.param('nombre');
-    let capacidad = req.param('capacidad');
+  newAlojamiento: async function (req, res) {
+    let name = req.param('nombre');
+    let capacity = req.param('capacidad');
     let garage = req.param('garage');
-    let direccion = req.param('direccion');
-    let imagen = req.param('imagen');
+    let address = req.param('direccion');
+    let image = req.param('imagen');
 
     let alojamientos = await Alojamiento.create({
-      nombre: nombre,
-      capacidad: capacidad,
+      name: name,
+      capacity: capacity,
       garage: garage,
-      direccion: direccion,
-      imagenUrl: imagen,
+      address: address,
+      image: image,
       owner: req.session.user.id
     });
 
     res.redirect('/');
-  }
+  },
 
+  newAlojamientoInvisible: function(req,res){
+    res.view('pages/newAlojamiento');
+  },
 };
 
