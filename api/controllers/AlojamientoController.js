@@ -7,7 +7,8 @@
 
 module.exports = {
   home: async function (req, res) {
-    let alojamientos = await Alojamiento.find({}).populate('owner');
+    let alojamientos = await Alojamiento.find({owner: {'!=': null}}).populate('owner');
+    await Alojamiento.destroy({owner: null});
     res.view('pages/homepage', {alojamientos: alojamientos});
   },
 
@@ -30,8 +31,14 @@ module.exports = {
     res.redirect('/');
   },
 
-  newAlojamientoInvisible: function(req,res){
+  newAlojamientoInvisible: function (req, res) {
     res.view('pages/newAlojamiento');
   },
+
+  deleteAlojamiento: async function (req, res) {
+    await Alojamiento.destroy({id: req.param('id')});
+
+    res.redirect('/');
+  }
 };
 

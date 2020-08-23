@@ -5,14 +5,11 @@
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
+
 module.exports = {
 
   attributes: {
-    name: {
-      type: 'string',
-      required: true,
-    },
-    lastName: {
+    fullName: {
       type: 'string',
       required: true,
     },

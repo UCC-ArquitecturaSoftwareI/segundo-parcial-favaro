@@ -28,16 +28,19 @@ module.exports.routes = {
   //Alojamientos
   'GET /newAlojamiento': 'AlojamientoController.newAlojamientoInvisible',
   'POST /newAlojamiento': 'AlojamientoController.newAlojamiento',
+  '/deleteAlojamiento/:id': 'AlojamientoController.deleteAlojamiento',
 
   //Customers
   'GET /newCustomer': 'CustomerController.newCustomerInvisible',
   'POST /newCustomer': 'CustomerController.newCustomer',
   '/customer': 'CustomerController.customers',
+  '/deleteCustomer/:id': 'CustomerController.deleteCustomer',
 
   //Estadias
   'GET /newRental/:id': 'EstadiaController.newRentalInvisible',
   'POST /newRental/:id': 'EstadiaController.newRental',
   'GET /rental/:id': 'EstadiaController.rentals',
+  '/deleteEstadia/:id': 'EstadiaController.deleteEstadia',
   /***************************************************************************
    *                                                                          *
    * More custom routes here...                                               *

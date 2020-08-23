@@ -6,21 +6,25 @@
         <th scope="col">Fecha Final</th>
         <th scope="col">Forma de Pago</th>
         <th scope="col">Valor por Día</th>
+        <th scope="col">Valor total</th>
         <th scope="col">Seña 20%</th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
     <% for (let estadia of estadias) { %>
-        <% if( estadia.rent == req.params.id ) { %>
-            <tr>
-                <th scope="row"> <%- estadia.guest %> </th>
-                <td> <%- estadia.initialDate %> </td>
-                <td> <%- estadia.finalDate %> </td>
-                <td> <%- estadia.paymentMethod %> </td>
-                <td> <%- estadia.valuePerDay %> </td>
-                <td> <%- estadia.downPayment %> </td>
-            </tr>
-        <% } %>
+        <tr>
+            <th scope="row"> <%= estadia.guest.fullName %> </th>
+            <td> <%- estadia.initialDate.split('T')[0] %> </td>
+            <td> <%- estadia.finalDate.split('T')[0] %> </td>
+            <td> <%- estadia.paymentMethod %> </td>
+            <td> <%- estadia.valuePerDay %> </td>
+            <td> <%- estadia.totalValue %> </td>
+            <td> <%- estadia.downPayment %> </td>
+            <td><a class="fas fa-times-circle text-danger" name="id" role="button"
+                   href="/deleteEstadia/<%- estadia.id %>"></a>
+        </tr>
+
     <% } %>
     </tbody>
 </table>

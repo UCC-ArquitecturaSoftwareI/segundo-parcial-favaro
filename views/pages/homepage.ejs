@@ -9,7 +9,9 @@
                 <div class="col-lg-6 col-md-12 mb-3">
                     <h2 class="pt-2 display-4 mt-2"><%- alojamiento.name %> </h2>
                     <div class="card homeCards border py-3 rounded-pill mb-2">
-                        <img class="card-img-top align-self-center" src="<%- alojamiento.image %>">
+                        <a class="fas fa-times-circle text-danger align-self-end mr-5 pr-5" role="button"
+                           href="/deleteAlojamiento/<%- alojamiento.id %>"></a>
+                        <img class="card-img-top align-self-center" src="/images/<%= alojamiento.image %>.png">
                         <div class="card-body align-middle d-flex flex-column align-items-center p-0">
                             <a class="btn btn-dark text-white my-3" role="button" href="rental/<%- alojamiento.id %>">Ver
                                 estadías</a>
