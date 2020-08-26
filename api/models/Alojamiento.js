@@ -30,7 +30,7 @@ module.exports = {
     },
     image: {
       type: 'string',
-      required: true,
+      required: false,
     },
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗

@@ -18,7 +18,7 @@ module.exports = {
   },
 
   newRental: async function (req, res) {
-    let id = req.param('id');
+    let idUrl = req.param('id');
 
     let initialDate = new Date(req.param('initialDate'));
     let finalDate = new Date(req.param('finalDate'));
@@ -29,7 +29,7 @@ module.exports = {
     let totalValue = valuePerDay * days;
     let downPayment = (totalValue * 20) / 100;
     let alojamiento = req.params.id;
-    let fullGuest = await Customer.find({fullName: req.param('guestName')});
+    let fullGuest = req.param('guestID');
 
     let rentals = await Estadia.create({
       initialDate: initialDate,
@@ -42,7 +42,7 @@ module.exports = {
       guest: fullGuest
     });
 
-    res.redirect('/rental/' + id);
+    res.redirect('/rental/' + idUrl);
   },
 
   newRentalInvisible: function (req, res) {
