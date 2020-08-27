@@ -17,18 +17,35 @@ module.exports = {
     let capacity = req.param('capacidad');
     let garage = req.param('garage');
     let address = req.param('direccion');
-    let image = req.param('imagen');
+    let image = req.file('imagen').upload({
+      dirname: require('path').resolve(sails.config.appPath, '.tmp/public/uploads'),
+      maxBytes: 10000000
+    }, async function (err, uploadedFiles) {
+      if (err) {
+        return res.serverError(err);
+      }
 
-    let alojamientos = await Alojamiento.create({
-      name: name,
-      capacity: capacity,
-      garage: garage,
-      address: address,
-      image: image,
-      owner: req.session.user.id
+      let nombreArchivo = uploadedFiles[0].fd.split('/');
+      nombreArchivo = nombreArchivo[nombreArchivo.length-1];
+
+      let alojamientos = await Alojamiento.create({
+        name: name,
+        capacity: capacity,
+        garage: garage,
+        address: address,
+        image: nombreArchivo,
+        owner: req.session.user.id
+      });
+
+      res.redirect('/');
+
+      return console.log({
+        message: uploadedFiles.length + ' file(s) uploaded successfully!',
+        uploadedFiles
+      });
     });
 
-    res.redirect('/');
+
   },
 
   newAlojamientoInvisible: function (req, res) {

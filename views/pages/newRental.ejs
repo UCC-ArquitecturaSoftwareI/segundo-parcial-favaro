@@ -3,7 +3,9 @@
 
     <div class="form-group w-25">
         <label for="guestID"><b>Nombre y apellido del Cliente</b></label>
-        <input type="number" class="form-control"  name="guestID">
+        <%for (let customer of customers){%>
+        <option type="number" class="form-control"  name="guestID">
+        <%}%>
     </div>
 
     <div class="form-group w-25">
