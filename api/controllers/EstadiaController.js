@@ -12,7 +12,7 @@ module.exports = {
     await Estadia.destroy({guest: null});
     await Estadia.destroy({rent: null});
 
-    let estadias = await Estadia.find({rent: req.params.id}).populate('guest');
+    let estadias = await Estadia.find({rent: req.params.id}).populate('guest').sort('initialDate ASC');
 
     res.view('pages/rental', {estadias: estadias});
   },
@@ -29,7 +29,7 @@ module.exports = {
     let totalValue = valuePerDay * days;
     let downPayment = (totalValue * 20) / 100;
     let alojamiento = req.params.id;
-    let fullGuest = req.param('guestID');
+    let guestID = req.param('guestID');
 
     let rentals = await Estadia.create({
       initialDate: initialDate,
@@ -39,14 +39,15 @@ module.exports = {
       totalValue: totalValue,
       downPayment: downPayment,
       rent: alojamiento,
-      guest: fullGuest
+      guest: guestID
     });
 
     res.redirect('/rental/' + idUrl);
   },
 
-  newRentalInvisible: function (req, res) {
-    res.view('pages/newRental');
+  newRentalInvisible: async function (req, res) {
+    let customers = await Customer.find({});
+    res.view('pages/newRental', {customers: customers});
   },
 
   deleteEstadia: async function (req, res) {

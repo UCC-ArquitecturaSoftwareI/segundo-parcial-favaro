@@ -11,7 +11,6 @@ module.exports = {
     res.view('pages/customer', {customers: customers});
   },
 
-
   newCustomer: async function (req, res) {
     let fullName = req.param('fullName');
     let city = req.param('city');
