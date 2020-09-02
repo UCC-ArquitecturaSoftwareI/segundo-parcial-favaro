@@ -6,15 +6,15 @@
                     <a class="fas fa-times-circle text-danger align-self-end mr-2" name="id" role="button"
                        href="/deleteEstadia/<%- estadia.id %>"></a>
                     <div class="card-body p-0">
-                        <h4 class="pt-1 text-center"><%- estadia.guest.fullName %> </h4>
+                        <h5 class="pb-2 text-center border-bottom border-success"><%- estadia.guest.fullName %> </h5>
                         <div class="row">
                             <div class="col-7">
-                                <p>Desde: </p>
-                                <p>Hasta: </p>
-                                <p>Forma de pago: </p>
-                                <p>Valor por día: </p>
-                                <p>Valor total: </p>
-                                <p>Seña 20%: </p>
+                                <p class="border-bottom border-dark">Desde: </p>
+                                <p class="border-bottom border-dark">Hasta: </p>
+                                <p class="border-bottom border-dark">Forma de pago: </p>
+                                <p class="border-bottom border-dark">Valor por día: </p>
+                                <p class="border-bottom border-dark">Valor total: </p>
+                                <p class="border-bottom border-dark">Seña 20%: </p>
                             </div>
                             <div class="col-5 font-weight-bold d-flex flex-column align-items-start pl-0">
                                 <p><%- estadia.initialDate.split('T')[0] %></p>
