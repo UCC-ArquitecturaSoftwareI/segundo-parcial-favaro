@@ -1,12 +1,12 @@
 <div class="container text-center vh-90">
 
-    <h1 class="display-4 pb-2 pt-3 border-bottom border-white">Alquileres del Valle</h1>
+    <h1 class="display-4 p-3 border-bottom border-white">Alquileres del Valle</h1>
 
     <div id="homepage" class="row pt-3">
         <% if (req.session.user){ %>
             <% for (let alojamiento of alojamientos) { %>
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-3 d-flex justify-content-center">
-                    <div class="card homeCards mb-2 p-2">
+                    <div class="card homeCards my-2 p-2">
                         <a class="fas fa-times-circle text-danger align-self-end" role="button"
                            href="/deleteAlojamiento/<%- alojamiento.id %>"></a>
                         <h2><%- alojamiento.name %> </h2>

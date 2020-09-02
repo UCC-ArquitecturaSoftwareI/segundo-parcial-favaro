@@ -43,12 +43,8 @@ select:focus {
 
 .btn-dark {
     background-color: #192233 !important;
-    border-color: #212c42 !important;
-}
-
-.btnAlojamiento {
-    width: 10%;
-    height: 50px;
+    border-color: #151B28 !important;
+    border-radius: 10px !important;
 }
 
 .vh-90 {
@@ -101,9 +97,9 @@ h1,
     Rental
  */
 .rentalCards {
-    background-color: #192233 !important;
+    background-color: #1e273a !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 30px !important;
-    transition: 300ms linear !important;
 }
 
 .rentalCards h4{
