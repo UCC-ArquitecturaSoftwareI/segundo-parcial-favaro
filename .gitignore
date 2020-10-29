@@ -132,3 +132,35 @@ lib-cov
 *.out
 *.pid
 
+########################
+# sails
+########################
+.sails
+.waterline
+.rigging
+
+
+########################
+# node.js / npm
+########################
+lib-cov
+*.csv
+*.dat
+*.gz
+
+pids
+logs
+results
+
+
+npm-debug.log
+
+
+########################
+# local config
+########################
+config/local.js
+
+
+
+
